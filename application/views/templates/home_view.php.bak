@@ -1,0 +1,105 @@
+<html>
+   <head>
+     <meta charset="utf-8" />
+     <!--<meta name="viewport" content="width=device-width, initial-scale=1" />-->
+     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
+     <link rel="shortcut icon" href="<?php echo base_url(); ?>images/favicon.ico">
+     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/bootstrap.min.css ">
+     <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>css/simple-sidebar.css ">
+     <script src="<?php echo base_url(); ?>jquery/jquery-3.1.0.min.js"></script>
+     <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+
+     <style>
+       .jumbotron-vb {
+         background-color: #05568D;
+         color: #ffffff;
+         margin-bottom: 0;
+       }
+       .btn-vb {
+         background-color: #05568D;
+         color: #ffffff;
+       }
+       .footer {
+         font-size: 12px;
+         height: 20px;
+         bottom: 0;
+         width: 100%;
+         position: absolute;
+       }
+       .user-info {
+         padding-right: 15px;
+       }
+       .row {
+         padding: 0px;
+       }
+       .nav-vb {
+         background-color: #dae5ed;
+       }
+       .menu-hider {
+         height: 100%;
+       }
+     </style>
+   <title>Prototype ITMS - Logged User Area</title>
+ </head>
+ <body>
+   <div class="jumbotron jumbotron-vb row">
+     <?php include 'templates/header.php';?>
+   </div>
+   <!--Menu nempel kiri start-->
+   <div id="wrapper">
+     <div id="sidebar-wrapper">
+       <ul class="sidebar-nav">
+         <li>
+           <a href="<?php echo base_url(); ?>index.php/home">Statistic</a>
+         </li>
+         <li>
+           <a href="<?php echo base_url(); ?>index.php/sales_billing">Acumatica Request</a>
+         </li>
+         <li>
+           <a href="">Task / Issue</a>
+         </li>
+         <li>
+           <a href="">Inventory</a>
+         </li>
+         <br />
+         <li>
+           <a href="">Settings</a>
+         </li>
+       </ul>
+     </div>
+   <!--Menu nempel kiri end-->
+   <div id="page-content-wrapper">
+     <div class="row">
+       <div class="col-md-10">
+         <!--Buat nutup menu - perlu didesain sedemikian rupa-->
+         <div class="">
+           <a href="#menu-toggle" class="btn" id="menu-toggle"><</a>
+         </div>
+         <!-- Buat nutup menu end-->
+         <h2>ITMS Home Panel</h2>
+       </div>
+       <div class="col-md-2 text-right">
+         login sebagai: <?php echo $username; ?><br />
+         <a href="home/logout">Logout</a>
+       </div>
+     </div>
+     <div class="row">
+       <div class="col-sm-12">
+         <div>
+           <h4>Logged Area Content</h4>
+         </div>
+       </div>
+     </div>
+    </div>
+  </div>
+   <?php include 'templates/footer.php';?>
+   <!-- Menu Toggle Script -->
+   <script>
+   $("#menu-toggle").click(function(e) {
+       e.preventDefault();
+       $("#wrapper").toggleClass("toggled");
+   });
+   </script>
+   <!-- Menu Toggle Script End -->
+ </body>
+</html>

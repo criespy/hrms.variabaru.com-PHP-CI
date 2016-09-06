@@ -1,0 +1,68 @@
+/*titik adalah class, pagar adalah id*/
+body {
+  height: 100%;
+  width: 100%;
+  /*overflow: hidden;*/
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  font-family: sans-serif;
+}
+.header {
+  background-color: #006cb7; /* For browsers that do not support gradients */
+    /*background: -webkit-linear-gradient(#006cb7, #def0f7); /* For Safari 5.1 to 6.0 */
+    /*background: -o-linear-gradient(#006cb7, #def0f7); /* For Opera 11.1 to 12.0 */
+    /*background: -moz-linear-gradient(#006cb7), #def0f7); /* For Firefox 3.6 to 15 */
+    /*background: linear-gradient(#006cb7, #def0f7); /* Standard syntax (must be last) */
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 8%;
+  width: 100%;
+  overflow: hidden;
+}
+.footer {
+  font-size: 12px;
+  position: absolute;
+  bottom: 1%;
+  right: 1%;
+  /*width: 50%;*/
+  text-align: center;;
+}
+#app-title {
+  position: absolute;
+  top: 0px;
+  right: 16px;
+}
+#login-form {
+  position:absolute;
+  background-color: #dee7ea;
+  top: 10%;
+  left: 35%;
+  width: 300px;
+  padding: 10px;
+  padding-top: 0px;
+  margin: 10px;
+  border: 1px;
+  border-top-right-radius: 30px;
+  border-style: solid;
+  border-color: #006cb7;
+}
+.warning-text{
+  color: red;
+  font-size: 12px;
+}
+.user-info{
+  font-size: 14px;
+  position: absolute;
+  right: 1%;
+  top: 9%;
+}
+
+#triangle-left {
+	width: 0;
+	height: 0;
+	border-top: 50px solid transparent;
+	border-right: 100px solid red;
+	border-bottom: 50px solid transparent;
+}

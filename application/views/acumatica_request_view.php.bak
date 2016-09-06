@@ -1,0 +1,14 @@
+<h2>Sales Billing open release</h2>
+<table>
+  <tr>
+    <th>Nomor Sales Billing</th>
+    <th>Status</th>
+  </tr>
+  <?php foreach ($sales_billing as $row): ?>
+  <tr>
+    <td><?php echo $row['RefNbr']; ?></td>
+    <td><?php echo $row['Status']; ?></td>
+  </tr>
+
+</table>
+<?php endforeach; ?>
