@@ -1,4 +1,12 @@
-version 0.1.4 todo:
+versi 0.2.1
+- perbaikan tampilan form cari sales billing, menyesuaikan engine AdminLTE
+
+version 0.2.0
+- menggunakan engine AdminLTE, merubah tampilan keseluruhan
+- pembuatan setting user
+- dummy data di homepage
+
+version 0.1.4
 - terapkan kaidah Don't Repeat Yourself, masih banyak kode yang tidak efisien
 
 version 0.1.3

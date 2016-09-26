@@ -24,7 +24,7 @@ class Sales_billing extends CI_Controller{
       $session_data = $this->session->userdata();
       $data['username'] = $session_data['username'];
       $this->load->view('templates/header', $data);
-      $this->load->view('menu_view');
+      $this->load->view('templates/menu');
 
       $data['sales_billing'] = $this->sales_billing_model->get_salesbilling();
       if (is_array($data['sales_billing'])) {
@@ -37,13 +37,14 @@ class Sales_billing extends CI_Controller{
     $this->load->view('templates/footer');
   }
 
+  //fungsi rilis ini dipisah part karena ngambil variabel dari URL yang dipisah oleh "/"
   public function rilis($part1, $part2, $part3, $part4){
     if ($this->session->logged_in) {
       $session_data = $this->session->userdata();
       $data['username'] = $session_data['username'];
     }
     $this->load->view('templates/header', $data);
-    $this->load->view('menu_view');
+    $this->load->view('templates/menu');
     $refnbr = $part1.'/'.$part2.'/'.$part3.'/'.$part4;
     //echo 'apa sih'.$refnbr;
     $data['sales_billing'] = $this->sales_billing_model->release_salesbilling($refnbr);

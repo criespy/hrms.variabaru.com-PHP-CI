@@ -13,7 +13,7 @@ class Login extends CI_Controller{
     }
     else{
       $data['page_title'] = 'VariaBaru ITMS Login';
-      $this->load->view('templates/header', $data);
+      $this->load->view('templates/header-logout');
       $this->load->view('login_view');
       $this->load->view('templates/footer');
     }

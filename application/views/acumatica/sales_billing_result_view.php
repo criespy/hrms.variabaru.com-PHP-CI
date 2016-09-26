@@ -1,21 +1,12 @@
- <div id="page-content-wrapper">
-   <div class="row">
-     <div class="col-md-10">
-       <!--Buat nutup menu - perlu didesain sedemikian rupa-->
-       <div class="">
-         <a href="#menu-toggle" class="btn" id="menu-toggle"><</a>
-       </div>
-       <!-- Buat nutup menu end -->
-       <!-- Judul halaman -->
-       <h2>Sales Billing open release</h2>
-     </div>
-     <!--Panel user -->
-     <div class="col-md-2 text-right">
-       login sebagai: <?php echo $username; ?><br />
-       <a href="home/logout">Logout</a>
-     </div>
-     <!--Panel user end -->
-   </div>
+ <div class="content-wrapper">
+   <section class="content-header">
+     <h1>Sales Billing open release</h1>
+     <ol class="breadcrumb">
+       <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+       <li class="active">Here</li>
+     </ol>
+   </section>
+   <section class="content">
    <!--Input box nomor sales billing-->
    <div class="row">
      <div class="col-md-7">
@@ -47,21 +38,18 @@
              <tr class="<?php if ($row['Status'] != 0) echo 'bg-danger'; else echo 'bg-success'?>">
                <td ><?php echo $row['RefNbr']; ?></td>
                <td><?php echo $row['Status']; ?></td>
-               <td><a href="<?php echo base_url().'index.php/sales_billing/rilis/'.$row['RefNbr'] ?>"</a>release</td>
-             </tr>
+               <td><a class="rilis" onclick="return confirm('Yakin buka kembali release?')" href="<?php echo base_url().'index.php/sales_billing/rilis/'.$row['RefNbr'] ?>"</a>re-open release</td>
+             </tr> <!--onclick="return confirm('Yakin buka kembali release?')"-->
          </table>
          <?php endforeach; ?>
          <!--Konten end-->
        </div>
      </div>
    </div>
-  </div>
+  </section>
+  <script>
+   $(document).on("click",".rilis",function(e){
+     bootbox.confirm("Yakin buka kembali release?");
+   }
+  </script>
 </div>
- <!-- Menu Toggle Script -->
- <script>
- $("#menu-toggle").click(function(e) {
-     e.preventDefault();
-     $("#wrapper").toggleClass("toggled");
- });
- </script>
- <!-- Menu Toggle Script End -->
