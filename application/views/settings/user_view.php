@@ -14,40 +14,36 @@
         <table class="table table-hover">
           <tr>
             <th>
-              Nama
+              Name
             </th>
             <th>
-              Alamat e-mail
+              E-mail Address
             </th>
           </tr>
           <?php foreach ($users as $row): ?>
           <tr>
             <td>
-              <a href="<?php echo base_url(); ?>index.php/users/detail/1"><?php echo $row['firstname'].' '.$row['lastname']; ?></a>
+              <a href="<?php echo base_url(); ?>index.php/users/detail/<?php echo $row['id'];?>"><?php echo $row['firstname'].' '.$row['lastname']; ?></a>
             </td>
             <td>
               <?php echo $row['email']; ?>
             </td>
           </tr>
           <?php endforeach; ?>
-          <tr>
-            <td>
-              dummy Aries Wibowo
-            </td>
-            <td>
-              dummy aries@variabaru.com
-            </td>
-          </tr>
-          <tr>
-            <td>
-              dummy Rosalia Yudanto
-            </td>
-            <td>
-              dummy rosa@variabaru.com
-            </td>
-          </tr>
         </table>
       </div>
     </div>
+    <div class="row">
+      <div class="col-md-4">
+        <button class="btn btn-default" onclick="create()">create new user</button>
+      </div>
+    </div>
+    <br />
   </section>
 </div>
+<!--script ke halaman create user-->
+<script>
+  function create(){
+    window.location.href = "<?php echo base_url()?>index.php/users/create/new"
+  }
+</script>

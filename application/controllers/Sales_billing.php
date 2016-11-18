@@ -3,7 +3,8 @@ class Sales_billing extends CI_Controller{
 
   public function __construct(){
     parent::__construct();
-    $this->load->model('sales_billing_model');
+    $this->load->model('sales_billing_model'); 
+    $this->load->model('user_model');
     $this->load->helper(array('form'));
     $this->load->library('form_validation');
 
@@ -23,6 +24,9 @@ class Sales_billing extends CI_Controller{
     if ($this->session->logged_in){
       $session_data = $this->session->userdata();
       $data['username'] = $session_data['username'];
+
+      $data['user_status'] = $this->user_model->get_user_status($data);
+
       $this->load->view('templates/header', $data);
       $this->load->view('templates/menu');
 

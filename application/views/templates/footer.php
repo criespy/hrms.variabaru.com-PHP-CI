@@ -2,7 +2,7 @@
 <footer class="main-footer">
   <!-- To the right -->
   <div class="pull-right hidden-xs">
-    "think-feel-act"
+    <b>version 0</b>.4.1
   </div>
   <!-- Default to the left -->
   <strong>Copyright &copy; 2016 <a href="#">VariaBaru</a>.</strong> All rights reserved.
@@ -95,11 +95,53 @@
 <script src="<?php echo base_url();?>adminlte/bootstrap/js/bootstrap.min.js"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url();?>adminlte/dist/js/app.min.js"></script>
+<!--SlimScroll Plugin -->
+<script src="<?php echo base_url();?>adminlte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- Bootbox -->
 <script src="<?php echo base_url();?>js/bootbox.min.js"></script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
    Both of these plugins are recommended to enhance the
    user experience. Slimscroll is required when using the
    fixed layout. -->
+<!--script untuk date & time -->
+<script type="text/javascript">
+  function display_c(){
+    var refresh=1000; // Refresh rate in milli seconds
+    mytime=setTimeout('display_ct()',refresh)
+  }
+
+  function display_ct() {
+    var strcount
+    var x = new Date()
+    var x1= x.getDate() + "/" + x.getMonth() + "/" + x.getFullYear();
+    var hari = x.getDay();
+    switch (hari) {
+      case 0:
+        hari = "Minggu";
+        break;
+      case 1:
+        hari = "Senin";
+        break;
+      case 2:
+        hari = "Selasa";
+        break;
+      case 3:
+        hari = "Rabu";
+        break;
+      case 4:
+        hari = "Kamis";
+        break;
+      case 5:
+        hari = "Jumat";
+        break;
+      case 6:
+        hari = "Sabtu";
+        break;
+    }
+    x1 = hari + ", " + x1 + " - " + x.getHours( )+ ":" + x.getMinutes() + ":" + x.getSeconds();
+    document.getElementById('ct').innerHTML = x1;
+    tt=display_c();
+   }
+</script>
 </body>
 </html>

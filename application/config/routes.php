@@ -50,8 +50,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 //$route['home/statistic'] = 'home/index/statistic';
-$route['news/(:any)'] = 'news/view/$1';
-$route['news'] = 'news';
 $route['default_controller'] = 'login';
 $route['sales_billing'] = 'sales_billing';
 $route['home/index2'] = 'home/index2'; //tes adminLTE

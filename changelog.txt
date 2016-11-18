@@ -1,5 +1,33 @@
+versi 0.4.2
+- avatar user diambil dari database
+- penambahan plugin SlimScroll
+
+versi 0.4.1
+- pagination di tampilan daftar barcode
+- tampilan edit barcode
+- print pdf barcode sudah ada nama barang
+
+versi 0.4.0
+- menu barcode maker (tarik data dan print ke pdf)
+
+versi 0.3.0
+- penambahan library fpdf untuk menciptakan output file pdf (thanks to fpdf team!)
+- perubahan halaman login
+- animasi typed-js
+- redirect ke halaman login di controller Home jika session expired
+
+versi 0.2.3
+- ganti button cancel di setting user dengan javascript, bukan anchor html
+- status angka di sales billing diganti menjadi released, partial, dan completed
+- fungsi jam dan tanggal di header
+
+versi 0.2.2
+- fungsi tampilkan semua user
+- halaman edit user (belum bisa update)
+
 versi 0.2.1
 - perbaikan tampilan form cari sales billing, menyesuaikan engine AdminLTE
+- ubah form login mengikuti bootstrap
 
 version 0.2.0
 - menggunakan engine AdminLTE, merubah tampilan keseluruhan

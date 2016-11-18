@@ -7,10 +7,10 @@
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel">
       <div class="pull-left image">
-        <img src="<?php echo base_url();?>adminlte/dist/img/aries.jpg" class="img-circle" alt="User Image">
+        <img src="<?php foreach ($user_status as $row): echo base_url().$row['picture'];?>" class="img-circle" alt="User Image">
       </div>
       <div class="pull-left info">
-        <p>Aries Wibowo</p>
+        <p><?php echo $row['firstname'].' '.$row['lastname']; endforeach;?></p>
         <!-- Status -->
         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
       </div>
@@ -30,10 +30,31 @@
 
     <!-- Sidebar Menu -->
     <ul class="sidebar-menu">
-      <li class="header">HEADER</li>
-      <!-- Optionally, you can add icons to the links -->
-      <li class="active"><a href="<?php echo base_url(); ?>index.php/home/statistic"><i class="fa fa-laptop"></i> <span>Status Palsu</span></a></li>
-      <li><a href="<?php echo base_url(); ?>index.php/home/salesbilling"><i class="fa fa-file"></i> <span>Acumatica Request</span></a></li>
+      <li class="header">Have a nice day!</li>
+      <li class="active">
+        <a href="<?php echo base_url(); ?>index.php/home/statistic">
+          <i class="fa fa-laptop"></i>
+          <span>General Status</span>
+        </a>
+      </li>
+      <li>
+        <a href="<?php echo base_url(); ?>index.php/home/salesbilling">
+          <i class="fa fa-file"></i>
+          <span>Acumatica Request</span>
+        </a>
+      </li>
+      <li>
+        <a href+"<?php echo base_url();?>index.php/home/inventory">
+          <i class="fa fa-qrcode"></i>
+          <span>Inventory</span>
+        </a>
+      </li>
+      <li>
+        <a href="<?php echo base_url();?>index.php/barcode">
+          <i class="fa fa-barcode"></i>
+          <span>Barcode Maker</span>
+        </a>
+      </li>
       <li class="treeview">
         <a href="#"><i class="fa fa-wrench"></i> <span>Settings</span>
           <span class="pull-right-container">

@@ -7,6 +7,7 @@ class Home extends CI_Controller{
     //$this->DB2 = $this->load->database('acumatica', TRUE);
     $this->load->helper(array('form'));
     $this->load->library('form_validation');
+    $this->load->model('user_model');
   }
 
   public function index($selected_page){
@@ -14,6 +15,9 @@ class Home extends CI_Controller{
     if ($this->session->logged_in){
       $session_data = $this->session->userdata();
       $data['username'] = $session_data['username'];
+
+      $data['user_status'] = $this->user_model->get_user_status($data);
+
       $this->load->view('templates/header', $data);
       $this->load->view('templates/menu');
       switch ($selected_page) {
@@ -26,11 +30,18 @@ class Home extends CI_Controller{
         case 'user':
           $this->load->view('settings/user_view');
           break;
+        case 'barcode':
+          $this->load->view('barcode/barcode_view');
+          break;
         default:
           $this->load->view('home_view', $data);
           break;
       }
-    $this->load->view('templates/footer');
+      $this->load->view('templates/footer');
+    }
+    else {
+      $this->session->unset_userdata('logged_in');
+      redirect('login', 'refresh');
     }
   }
 

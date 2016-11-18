@@ -15,11 +15,12 @@ class Login extends CI_Controller{
       $data['page_title'] = 'VariaBaru ITMS Login';
       $this->load->view('templates/header-logout');
       $this->load->view('login_view');
-      $this->load->view('templates/footer');
+      //$this->load->view('templates/footer');
     }
   }
 
   function verifikasi_login(){
+
     $this->form_validation->set_rules('username', 'Username', 'trim|required');
     $this->form_validation->set_rules('password', 'Password', 'required');
 
@@ -38,7 +39,7 @@ class Login extends CI_Controller{
       }
     }
     else{
-      $this->load->view('login_view');
+      $this->index();
     }
   }
 

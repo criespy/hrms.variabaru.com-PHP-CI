@@ -13,9 +13,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="<?php echo base_url();?>adminlte/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>css/font-awesome-4.6.3/css/font-awesome.min.css">
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">-->
   <!-- Ionicons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>css/ionicons-2.0.1/css/ionicons.min.css">
+  <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">-->
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url();?>adminlte/dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
@@ -33,6 +35,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
   <!--icon VB-->
   <link rel="shortcut icon" href="<?php echo base_url(); ?>images/favicon.ico">
+  <!--Login css-->
+  <link rel="stylesheet" href="<?php echo base_url();?>css/login.css">
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -55,18 +59,13 @@ desired effect
 |---------------------------------------------------------|
 -->
 <body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+<div>
 
   <!-- Main Header -->
-  <header class="main-header">
+  <header class="header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>V</b>B</span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>Varia</b>Baru</span>
-    </a>
+
 
     <!-- Header Navbar -->
 

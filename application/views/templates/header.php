@@ -54,14 +54,14 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="hold-transition skin-blue sidebar-mini">
+<body class="hold-transition skin-blue sidebar-mini fixed" onload="display_ct();">
 <div class="wrapper">
 
   <!-- Main Header -->
   <header class="main-header">
 
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"><b>V</b>B</span>
       <!-- logo for regular state and mobile devices -->
@@ -77,6 +77,12 @@ desired effect
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
+
+          <!--date & time disini-->
+          <li class="dropdown user user-menu hidden-xs">
+            <a id="ct"></a>
+          </li>
+
           <!-- Messages: style can be found in dropdown.less-->
           <li class="dropdown messages-menu">
             <!-- Menu toggle button -->
@@ -93,7 +99,7 @@ desired effect
                     <a href="#">
                       <div class="pull-left">
                         <!-- User Image -->
-                        <img src="<?php echo base_url();?>adminlte/dist/img/aries.jpg" class="img-circle" alt="User Image">
+                        <img src="<?php foreach ($user_status as $row): echo base_url().$row['picture'];?>" class="img-circle" alt="User Image">
                       </div>
                       <!-- Message title and timestamp -->
                       <h4>
@@ -177,18 +183,18 @@ desired effect
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="<?php echo base_url();?>adminlte/dist/img/aries.jpg" class="user-image" alt="User Image">
+              <img src="<?php echo base_url().$row['picture'];?>" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Aries Wibowo</span>
+              <span class="hidden-xs"><?php echo $row['firstname'].' '.$row['lastname']; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="<?php echo base_url();?>adminlte/dist/img/aries.jpg" class="img-circle" alt="User Image">
+                <img src="<?php echo base_url().$row['picture'];?>" class="img-circle" alt="User Image">
 
                 <p>
-                  Aries Wibowo - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  <?php echo $row['firstname'].' '.$row['lastname']; endforeach;?> - Web Developer
+                  <small>Member since 2016 B.C</small>
                 </p>
               </li>
               <!-- Menu Body -->

@@ -12,7 +12,7 @@ class Login_model extends CI_Model{
   public function cek_user($username, $password){
     $query = $this->DB1->get_where($this->table, array('username' => $username, 'userpass' => md5($password)), 1, 0);
     if($query->num_rows() > 0){
-      return TRUE;
+      return $query->result();//TRUE;
     }
     else{
       return FALSE;

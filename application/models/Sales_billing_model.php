@@ -3,10 +3,14 @@ class Sales_billing_model extends CI_Model {
   public function __construct() {
     //parent::__construct;
     $this->DB2 = $this->load->database('acumatica', TRUE); //koneksi ke database acumatica
+    if (! $this->DB2) {
+      die ('Database tidak terhubung');
+      redirect('base_url().index.php/sales_billing');
+    }
   }
 
   public function get_salesbilling() {
-    //if (!DB2) { echo 'Database tidak terhubung';}
+
     $refnbr = $this->input->post('refnbr');
     //$refnbr = 'VB/16/V/07886';
     $query = $this->DB2->query("SELECT * FROM ttARCol where RefNbr = '$refnbr'");
